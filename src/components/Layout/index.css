@@ -17,7 +17,7 @@ a {
 }
 
 .Hero {
-  background: url('../images/wallpaper3.jpg');
+  background: url('../../images/wallpaper3.jpg');
   background-size: cover;
   background-position: center;
   height: 920px;
@@ -110,6 +110,17 @@ a {
 
 @media (max-width: 640px) {
   .Hero .Logos {
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.Cards h2 {
+  margin: 50px 20px;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -1.4px;
+  background: linear-gradient(104deg, #050A27 0%, #4A548C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
