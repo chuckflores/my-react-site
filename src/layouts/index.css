@@ -21,6 +21,7 @@ a {
   background-size: cover;
   background-position: center;
   height: 920px;
+  position: relative;
 }
 
 .HeroGroup {
@@ -35,15 +36,20 @@ a {
   color: white;
   font-size: 60px;
   line-height: 1.2;
+  opacity: 0;
+  animation: HeroAnimation 2.5s forwards cubic-bezier(0.2,0.8,0.8,1);
 }
 
 .Hero p {
+  opacity: 0;
   color: rgba(255,255,255,0.8);
-  font-size: 26px;
+  font-size: 30px;
   line-height: 1.5;
+  animation: HeroAnimation 2.5s 0.2s forwards cubic-bezier(0.2,0.8,0.8,1);
 }
 
 .Hero a {
+  opacity: 0;
   font-size: 17px;
   font-weight: 700;
   color: white;
@@ -53,6 +59,13 @@ a {
   border: 1px solid rgba(255,255,255,0.25);
   border-radius: 40px;
   padding: 8px 20px;
+  transition: 0.8s cubic-bezier(0.2,0.8,0.8,1);
+  animation: HeroAnimation 2.5s 0.5s forwards cubic-bezier(0.2,0.8,0.8,1);
+}
+
+.Hero a:hover {
+  background: white;
+  color: black;
 }
 
 @media (max-width: 640px) {
@@ -66,5 +79,37 @@ a {
 
   .Hero p {
     font-size: 20px;
+  }
+}
+
+@keyframes HeroAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.Hero svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+.Hero .Logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 40px;
+  margin: 100px 0;
+  justify-items: center;
+}
+
+@media (max-width: 640px) {
+  .Hero .Logos {
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
